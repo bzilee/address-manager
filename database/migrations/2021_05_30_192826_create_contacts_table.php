@@ -22,6 +22,7 @@ class CreateContactsTable extends Migration
             $table->string('domicile1')->nullable();
             $table->string('domicile2')->nullable();
             $table->string('email')->nullable();
+            $table->boolean("favori")->default(0);
             $table->foreign('group_contacts_id')->references('id')->on('group_contacts')->onUpdate('cascade')->onDelete('set null');
 
             $table->timestamps();
