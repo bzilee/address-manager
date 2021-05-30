@@ -5,7 +5,7 @@ An Address Manager (phone contacts and emails) built with Laravel + Livewire + T
 ## Capture d'écran (Home page screenshot)
 
 <p align="center">
-    <img src="https://github.com/bzilee/address-manager/public/screenshot/shot.png" alt="Home  Page Screen Shot"></a>
+    <img src="public/screenshot/shot.png" alt="Home  Page Screen Shot"></a>
 </p>
 
 ## System Requirement
