@@ -35,7 +35,7 @@ class MainSection extends Component
      */
     public function showContactGrouped($id,$groupName)
     {
-        $this->contacts = Contact::where('group_contacts_id',$id)->get();
+        $this->contacts = Contact::where('group_contact_id',$id)->get();
         $this->titleNav = 'Groupes '.$groupName; 
     }
 
