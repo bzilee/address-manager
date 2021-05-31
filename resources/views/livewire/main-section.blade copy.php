@@ -3,11 +3,10 @@
     @livewire('search-bar')
     
     <div class="mb-3 bg-gray-200">
-        <span class="p-3 font-medium text-primary">{{ ($titleNav ?? 'Mes Contacts') }}</span>
+        <span class="p-3 font-medium text-primary">Mes contacts</span>
     </div>
     <div class="flex flex-col overflow-y-auto divide-y divide-gray-300 divide-solid">
-
-        @foreach($contacts as $contact)
+        @for ($i = 0; $i < 15; $i++)
             <div 
                 class="flex flex-row items-center justify-between py-2 pl-3 cursor-pointer hover:bg-gray-300"
                 wire:click.prevent="showDetailContact"
@@ -16,21 +15,19 @@
                 <div class="flex flex-row items-center w-full">
                     <div class="flex items-center justify-center w-12 h-12 text-white rounded-full bg-primary">TN</div>
                     <div class="flex flex-col px-3">
-                        <span class="text-sm font-semibold">{{ $contact->fullname }}</span>
+                        <span class="text-sm font-semibold">TANKEU NYA</span>
                         <span class="text-xs text-gray-500">Mobile : +237 655149221</span>
                         <span class="text-xs text-gray-500">Domicile : 237 654379397</span>
                     </div>
                 </div>
                 <div class="flex flex-row w-auto mr-3">
                     <span class=""><x-svg.icon-favorite-outline color="#6875f5" class="h-5 px-1 hover:opacity-50" /></span>
-                    {{-- <span class=""><x-svg.icon-favorite-outline color="#6875f5" class="h-5 px-1 hover:opacity-50" /></span> --}}
                     <span class=""><x-svg.icon-edit color="#6875f5" class="h-5 px-1 hover:opacity-50" /></span>
-                    <span class=""><x-svg.icon-delete color="#EF4444" class="h-5 px-1 hover:opacity-50" /></span>
+                    <span wire:click.prevent="$emitTo('menu-options', 'getTotalContactEvent')" class=""><x-svg.icon-delete color="#EF4444" class="h-5 px-1 hover:opacity-50" /></span>
                 </div>
                 
             </div>
-            
-        @endforeach
+        @endfor
     
     </div>
     <x-detail-contact-modal wire:model="openDetailModal" max-width="sm">

@@ -15,6 +15,8 @@ class CreateGroupContactsTable extends Migration
     {
         Schema::create('group_contacts', function (Blueprint $table) {
             $table->id();
+
+            $table->string('name');
             $table->timestamps();
         });
     }
