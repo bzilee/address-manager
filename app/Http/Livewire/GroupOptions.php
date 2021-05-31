@@ -13,10 +13,11 @@ class GroupOptions extends Component
      */
     public $groups;
 
+
     /**
      * Collection du Nombres de contacts par groupes
      */
-    public $totalContactsGroups;
+    public $totalContactsGroups = [];
 
     /**
      * 
@@ -24,6 +25,7 @@ class GroupOptions extends Component
     public function mount()
     {
         $this->getGroups();
+        $this->getTotalContactsGroup();
     }
 
     /**
@@ -32,6 +34,17 @@ class GroupOptions extends Component
     public function getGroups()
     {
         $this->groups = GroupContact::all();
+    }
+
+    /**
+     * 
+     */
+    public function getTotalContactsGroup()
+    {
+        foreach($this->groups as $group){
+            $this->totalContactsGroups[$group->name] =  $group->contact()->count();
+        } 
+        
     }
 
     /**
