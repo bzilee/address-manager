@@ -8,15 +8,16 @@
     <div class="flex flex-col overflow-y-auto divide-y divide-gray-300 divide-solid">
         @if (count($contacts) === 0)
             <div 
-                class="flex flex-row items-center justify-between py-2 pl-3 cursor-pointer hover:bg-gray-300">
-                <x-svg.icon-empty-alert class="h-2"/>
+                class="flex flex-col items-center justify-center mt-10 ">
+                <x-svg.icon-empty-alert class="w-1/6"/>
+                <p class="font-semibold text-gray-500">Oops, Aucun Contact...</p>
             </div>   
         @else
             @foreach($contacts as $contact)
                 <div 
                     class="flex flex-row items-center justify-between py-2 pl-3 cursor-pointer hover:bg-gray-300"
                     wire:click.prevent="showDetailContact"
-                    wire:loading.attr="disabled" 
+                    wire:loading.attr="disabled"
                     >
                     <div class="flex flex-row items-center w-full">
                         <div class="flex items-center justify-center w-12 h-12 text-white rounded-full bg-primary">TN</div>
