@@ -66,6 +66,13 @@ An Address Manager (phone contacts and emails) built with Laravel + Livewire + T
     $ php artisan migrate
     $ npm run watch 
     ```
+
+* Create the first user in Database
+
+    ```shell
+    use link : your-server-domain/register to create a user 
+    ```
+
 ## Perspectives
 
 - Responsive Design for mobile devices
