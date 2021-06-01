@@ -13,6 +13,12 @@ class GroupOptions extends Component
      */
     public $groups;
 
+    /**
+     * Ecouteur d'evenements lors du clique sur une option du menu de la vue
+     */
+    protected $listeners = [
+        'getTotalContactGroupEvent' => 'getTotalContactsGroup',
+    ];
 
     /**
      * Collection du Nombres de contacts par groupes

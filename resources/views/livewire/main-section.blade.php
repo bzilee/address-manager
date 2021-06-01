@@ -10,7 +10,7 @@
             <div 
                 class="flex flex-col items-center justify-center mt-10 ">
                 <x-svg.icon-empty-alert class="w-1/6"/>
-                <p class="font-semibold text-gray-500">Oops, Aucun Contact...</p>
+                <p class="font-semibold text-gray-500">Oops, Aucun Contact pour cette Catégorie...</p>
             </div>   
         @else
             @foreach($contacts as $contact)
@@ -23,8 +23,8 @@
                         <div class="flex items-center justify-center w-12 h-12 text-white rounded-full bg-primary">TN</div>
                         <div class="flex flex-col px-3">
                             <span class="text-sm font-semibold">{{ $contact->fullname }}</span>
-                            <span class="text-xs text-gray-500">Mobile : +237 655149221</span>
-                            <span class="text-xs text-gray-500">Domicile : 237 654379397</span>
+                            <span class="text-xs text-gray-500">Mobile : {{ $contact->mobile1 ?? $contact->mobile2 }}</span>
+                            <span class="text-xs text-gray-500">{{ ($contact->mobile2 != null) ?  "Mobile 2 : ".$contact->mobile2 : (($contact->domicile2 != null) ? "Domicile 2: ".$contact->domicile2 : (($contact->email != null) ? "E-mail : ".$contact->email : ""))}}</span>
                         </div>
                     </div>
                     <div class="flex flex-row w-auto mr-3">

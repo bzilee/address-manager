@@ -14,21 +14,13 @@ class MenuOptions extends Component
      * Ecouteur d'evenements lors du clique sur une option du menu de la vue
      */
     protected $listeners = [
-        'getTotalContactEvent' => 'getTotalContact',
+        'getTotalContactEvent' => 'countContacts',
     ];
 
     /**
      * 
      */
     public function mount()
-    {
-        $this->countContacts();
-    }
-
-    /**
-     * 
-     */
-    public function getTotalContacts()
     {
         $this->countContacts();
     }
